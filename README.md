@@ -2,6 +2,10 @@
 
 A robust command-line utility for managing database backups with support for PostgreSQL and MySQL databases. Features include local and S3 storage options, backup types (full, incremental, differential), and Slack notifications.
 
+Please note that this utility is intended for use in controlled environments and should be adapted to fit specific security and operational requirements.
+
+Roadmap Project Link: https://roadmap.sh/projects/database-backup-utility
+
 ## Features
 
 - Support for PostgreSQL and MySQL databases
