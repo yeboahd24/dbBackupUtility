@@ -15,6 +15,7 @@ Roadmap Project Link: https://roadmap.sh/projects/database-backup-utility
 - Configurable through YAML files
 - Auto-detection of config file location
 - Comprehensive error handling and logging
+- Detailed help system with examples
 
 ## Prerequisites
 
@@ -67,6 +68,21 @@ notification:
 
 ## Usage
 
+### Getting Help
+
+```bash
+# Show general help
+./dbbackup --help
+
+# Show detailed help for specific commands
+./dbbackup help backup
+./dbbackup help restore
+./dbbackup help config
+
+# Show quick help for any command
+./dbbackup backup --help
+```
+
 ### Backup Database
 
 ```bash
@@ -101,6 +117,45 @@ notification:
 
 # Validate specific config file
 ./dbbackup config validate -c /path/to/config.yml
+```
+
+## Command Details
+
+### Backup Command
+```
+Options:
+  --type, -t     Backup type (full, incremental, differential) (default: "full")
+  --output, -o   Output file path for local storage
+  --config, -c   Path to config file (optional)
+
+Notes:
+  - For S3 storage, ensure AWS credentials are properly configured
+  - Incremental and differential backups depend on database support
+  - Output path is required when storage.enabled is false
+```
+
+### Restore Command
+```
+Options:
+  --file, -f     Backup file to restore from
+  --config, -c   Path to config file (optional)
+
+Notes:
+  - Ensure target database exists and is accessible
+  - User must have sufficient privileges for restore operation
+  - For S3 restores, ensure AWS credentials are properly configured
+```
+
+### Config Command
+```
+Options:
+  --config, -c   Path to config file (optional)
+
+Config File Locations:
+  1. Current directory
+  2. $HOME/.dbbackup/
+  3. /etc/dbbackup/
+  4. $XDG_CONFIG_HOME/dbbackup/
 ```
 
 ## AWS Configuration
