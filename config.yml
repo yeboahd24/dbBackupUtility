@@ -3,7 +3,7 @@ database:
   host: localhost
   port: 5432
   username: postgres
-  password: "@Linux70"
+  password: ""
   database: auth-db
 
 storage:

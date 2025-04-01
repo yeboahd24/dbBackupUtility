@@ -170,9 +170,7 @@ GOOS=windows GOARCH=amd64 go build -o dbbackup-windows-amd64.exe main.go
 4. Push to the branch
 5. Create a Pull Request
 
-## License
 
-MIT License - see LICENSE file for details
 
 ## Support
 
