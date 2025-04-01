@@ -1,0 +1,17 @@
+database:
+  type: postgres
+  host: localhost
+  port: 5432
+  username: postgres
+  password: "@Linux70"
+  database: auth-db
+
+storage:
+  enabled: false  # Set to true when you want to use remote storage
+  type: s3
+  bucket: my-backup-bucket
+  region: us-west-2
+
+notification:
+  slack_webhook: https://hooks.slack.com/services/xxx/yyy/zzz
+  enabled: false
